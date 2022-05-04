@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- DataBinding的编译标准 -->
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- 定义该View（布局）需要绑定的数据来源 -->
+
+    <data>
+        <variable
+            name="personInfo"
+            type="com.meishe.jetpackcollection.databinding.PersonInfo" />
+    </data>
+
+
+
+    <!-- 布局常规代码如下 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity"
+        android:orientation="vertical">
+
+
+        <EditText
+            android:id="@+id/et_name2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{personInfo.name}"
+            />
+
+        <EditText
+            android:id="@+id/et_pwd2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{personInfo.pwd}"
+            android:layout_marginBottom="60dp"
+            />
+
+
+
+        <!-- 双向绑定   @= View  -->
+        <EditText
+            android:id="@+id/et_name3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@={personInfo.name}"
+            />
+
+        <EditText
+            android:id="@+id/et_pwd3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@={personInfo.pwd}"
+            android:layout_marginBottom="60dp"
+            />
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@={personInfo.name}"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@={personInfo.pwd}"
+            />
+
+    </LinearLayout>
+</layout>
